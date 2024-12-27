@@ -6,3 +6,4 @@ $(".post_ads").hide();
 $(".weixin_ads_app").hide();
 $(".tbl-next-up").hide();
 
+alert('it is working')
