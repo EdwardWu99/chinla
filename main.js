@@ -11,7 +11,7 @@ canvas.id = 'c';  // 给 canvas 设置一个 id
 // 将 canvas 元素添加到 body 中
 document.body.appendChild(canvas);
 
-//canvas.style.position = 'absolute';  // 确保 canvas 定位为绝对定位
+canvas.style.position = 'absolute';  // 确保 canvas 定位为绝对定位
 canvas.style.top = '0';
 canvas.style.left = '0';
 canvas.style.width = '100%';  // 填充整个宽度
@@ -60,6 +60,14 @@ var c = document.getElementById("c");
     //1 = y co-ordinate of the drop(same for every drop initially) | 雨滴的y坐标(最初每一滴相同)
     for (var x = 0; x < columns; x++) drops[x] = 1;
 
+    // 当窗口大小改变时，重新调整 canvas 大小
+    window.addEventListener('resize', function() {
+        c.height = window.innerHeight;  // 更新高度
+        c.width = window.innerWidth;    // 更新宽度
+        // 重新绘制背景
+        draw();
+    });
+    
     //drawing the characters | 绘制字符
     function draw() {
       //Black BG for the canvas | 画布黑色背景
