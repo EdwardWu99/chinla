@@ -93,7 +93,7 @@ function auto() {
     $(".adsbygoogle").hide();
     $(".ads_right3").hide();
     $(".post_ads").hide();
-    $(".weixin_ads_app").hide();
+    $("#weixin_ads_app").hide();
     $("#tbl-next-up").hide();
     $("#_cm-css-reset").hide();
     $("#weixin_ads2").hide();
