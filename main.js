@@ -1,8 +1,9 @@
-/* html
+/*
+// html
 var htmlContent = `
     <canvas id="c"></canvas>
 `;
-$('.topic_line_title_in a').html(htmlContent);  
+$('.forum_fill').html(htmlContent);  
 */
 // 创建 canvas 元素
 var canvas = document.createElement('canvas');
@@ -10,6 +11,7 @@ canvas.id = 'c';  // 给 canvas 设置一个 id
 
 // 将 canvas 元素添加到 body 中
 document.body.appendChild(canvas);
+//$('.forum_fill').append(canvas);
 
 canvas.style.position = 'absolute';  // 确保 canvas 定位为绝对定位
 canvas.style.top = '0';
@@ -47,8 +49,8 @@ var c = document.getElementById("c");
     c.width = window.innerWidth;
 
     //chinese characters - taken from the unicode charset | 汉字 - 取自unicode字符集
-    var chinese =
-      "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    //var chinese ="田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    var chinese ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     //converting the string into an array of single characters | 将字符串转换为单个字符数组
     chinese = chinese.split("");
 
@@ -63,13 +65,13 @@ var c = document.getElementById("c");
     // 当窗口大小改变时，重新调整 canvas 大小
     window.addEventListener('resize', function() {
         c.height = window.innerHeight;  // 更新高度
-        c.width = window.innerWidth;    // 更新宽度
         // 重新绘制背景
         draw();
     });
-    
+
     //drawing the characters | 绘制字符
     function draw() {
+
       //Black BG for the canvas | 画布黑色背景
       //translucent BG to show trail | 半透明背景显示轨迹
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -108,6 +110,7 @@ function auto() {
 
     // left and right image
     $('div[style*="position:absolute"][style*="top:30px"]').hide();
+    $('div[style*="position: absolute"][style*="top: 30px"]').hide();
 
     // You May Like  ads
     $(".adsBox-taboola").hide();
@@ -115,13 +118,18 @@ function auto() {
     
 
     // change avatar
-    $('.user_avatar img').attr('src', 'https://findmyaitool-rh.s3.ap-southeast-2.amazonaws.com/images/appImg/white-hat-hacker-1715266745763');
-    $('.user_level img').attr('src', 'https://images.credly.com/images/ec81134d-e80b-4eb5-ae07-0eb8e1a60fcd/twitter_thumb_201604_image.png');
+    //$('.user_avatar img').attr('src', 'https://findmyaitool-rh.s3.ap-southeast-2.amazonaws.com/images/appImg/white-hat-hacker-1715266745763');
+    $('.user_level img').attr('src', 'https://cdn-icons-png.flaticon.com/512/7408/7408613.png');
     
     // hide
     $(".user_posts").hide();
-    setTimeout(auto, 500);
+    setTimeout(auto, 1000);
+
+    // nullify the scroll ads
+    // $(window).scroll(function() {});
+    $(window).off('scroll'); 
 };
-setTimeout(auto, 500);
-// nullify the scroll ads
-$(window).scroll(function() {});
+setTimeout(auto, 0);
+
+$('.topline').css('filter', 'opacity(0.4)');
+$('.center,.center *, .forum_fill *').css('background-color', 'rgba(255, 255, 255, 0.3)');
