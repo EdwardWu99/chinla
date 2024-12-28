@@ -11,7 +11,7 @@ canvas.id = 'c';  // 给 canvas 设置一个 id
 // 将 canvas 元素添加到 body 中
 document.body.appendChild(canvas);
 
-canvas.style.position = 'absolute';  // 确保 canvas 定位为绝对定位
+//canvas.style.position = 'absolute';  // 确保 canvas 定位为绝对定位
 canvas.style.top = '0';
 canvas.style.left = '0';
 canvas.style.width = '100%';  // 填充整个宽度
