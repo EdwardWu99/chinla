@@ -107,6 +107,7 @@ function auto() {
     $("#tbl-next-up").hide();
     $("#_cm-css-reset").hide();
     $("#weixin_ads2").hide();
+    $("#covid_ads").hide();
 
     // left and right image
     $('div[style*="position:absolute"][style*="top:30px"]').hide();
